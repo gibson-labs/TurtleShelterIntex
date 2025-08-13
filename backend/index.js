@@ -6,7 +6,7 @@ let app = express(); // app is now an object of express type. App is variable of
 
 let path = require('path'); // access to the path 
 
-const port = process.env.PORT || 5001
+const port = process.env.PORT || 5002
 
 const session = require('express-session'); 
 

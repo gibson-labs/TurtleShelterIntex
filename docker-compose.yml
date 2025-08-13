@@ -6,10 +6,10 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "5001:5001"
+      - "5002:5002"
     environment:
       - NODE_ENV=production
-      - PORT=5001
+      - PORT=5002
       - RDS_HOSTNAME=${RDS_HOSTNAME}
       - RDS_USERNAME=${RDS_USERNAME}
       - RDS_PASSWORD=${RDS_PASSWORD}

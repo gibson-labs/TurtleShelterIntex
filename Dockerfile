@@ -12,6 +12,6 @@ RUN npm ci --omit=dev || npm ci --only=production
 COPY . .
 
 # Expose the app port (defaults to 5001 in code if PORT is not set)
-EXPOSE 5001
+EXPOSE 5002
 
 CMD ["npm", "start"]
