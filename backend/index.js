@@ -7,6 +7,24 @@ let app = express(); // app is now an object of express type. App is variable of
 let path = require('path'); // access to the path 
 
 const port = process.env.PORT || 5002
+const host = process.env.HOST || '0.0.0.0'
+
+// Helper: determine a likely LAN IP to share for testing
+const os = require('os');
+function getLocalLanIp() {
+  const nets = os.networkInterfaces();
+  for (const name of Object.keys(nets)) {
+    for (const net of nets[name] || []) {
+      if (net.family === 'IPv4' && !net.internal) {
+        const ip = net.address;
+        if (ip.startsWith('192.168.') || ip.startsWith('10.') || ip.startsWith('172.16.') || ip.startsWith('172.17.') || ip.startsWith('172.18.') || ip.startsWith('172.19.') || ip.startsWith('172.2') || ip.startsWith('172.3')) {
+          return ip;
+        }
+      }
+    }
+  }
+  return 'localhost';
+}
 
 const session = require('express-session'); 
 
@@ -1240,4 +1258,9 @@ app.post('/sendEmail', async (req, res) => {
 
 
 // app listening
-app.listen(port, () => console.log(`Express App has started and server is listening on port ${port}!`));
+app.listen(port, host, () => {
+  const lan = getLocalLanIp();
+  console.log(`Express app listening on http://${host}:${port}`);
+  console.log(`Open from this machine:   http://localhost:${port}`);
+  console.log(`Open from your network:   http://${lan}:${port}`);
+});
