@@ -214,7 +214,7 @@
                 <a class="btn btn-outline-dark btn-sm" href="/eventRecords"><i class="fas fa-list"></i> View All</a>
             </div>
             <div class="table-responsive" style="max-height: 420px; overflow-y: auto;">
-            <table class="table table-hover align-middle mb-0">
+            <table class="table table-hover align-middle mb-0 table-stacked">
                 <thead class="thead-dark" style="position: sticky; top: 0; z-index: 1; background-color: #343a40; color: #fff;">
                     <tr>
                         <th>Event Status</th>
@@ -232,13 +232,13 @@
                     <% if (events && events.length > 0) { %>
                         <% events.forEach(function(event, index) { %> <!-- Added index for unique modal IDs -->
                             <tr>
-                                <td><%= event.eventstatus %></td>
-                                <td><%= event.eventdate ? event.eventdate.toISOString().split('T')[0] : event.startdaterange.toISOString().split('T')[0] %></td>
-                                <td><%= event.starttime || 'N/A' %></td>
-                                <td><%= event.city || 'N/A' %></td>
-                                <td><%= event.state || 'N/A' %></td>
-                                <td><%= event.zip || 'N/A' %></td>
-                                <td>
+                                <td data-label="Status"><%= event.eventstatus %></td>
+                                <td data-label="Date"><%= event.eventdate ? event.eventdate.toISOString().split('T')[0] : event.startdaterange.toISOString().split('T')[0] %></td>
+                                <td data-label="Start"><%= event.starttime || 'N/A' %></td>
+                                <td data-label="City"><%= event.city || 'N/A' %></td>
+                                <td data-label="State"><%= event.state || 'N/A' %></td>
+                                <td data-label="Zip"><%= event.zip || 'N/A' %></td>
+                                <td data-label="Contact">
                                     <% if (event.contactname) { %>
                                         <button class="btn btn-link" data-toggle="modal" data-target="#contactModal<%= index %>">
                                             <%= event.contactname %>
