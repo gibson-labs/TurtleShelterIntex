@@ -9,7 +9,7 @@ services:
       - "5002:80"
     environment:
       - NODE_ENV=production
-      - PORT=5002
+      - PORT=80
       - RDS_HOSTNAME=${RDS_HOSTNAME}
       - RDS_USERNAME=${RDS_USERNAME}
       - RDS_PASSWORD=${RDS_PASSWORD}
