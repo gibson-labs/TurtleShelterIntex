@@ -38,6 +38,43 @@ body {
   padding-right: 10px;
 }
 
+/* Global table improvements (desktop and mobile) */
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #303030;
+  color: #fff;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.06);
+}
+.table td, .table th {
+  padding: 0.75rem 1rem;
+}
+.table-hover tbody tr:hover {
+  background-color: rgba(117, 145, 69, 0.08);
+}
+
+/* Buttons and inputs: consistent radius and focus */
+.btn {
+  border-radius: 6px;
+}
+.btn:focus-visible, .form-control:focus, .form-select:focus {
+  outline: 2px solid #759145 !important;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.15rem rgba(117, 145, 69, 0.35) !important;
+  border-color: #759145 !important;
+}
+
+/* Cards spacing */
+.section-card { margin-bottom: 16px; }
+
+/* Navbar brand image sizing */
+.navbar-brand img { height: 28px; width: auto; margin-right: 8px; vertical-align: middle; }
+
 /* Responsive stacked tables for mobile; desktop unaffected */
 @media (max-width: 768px) {
   .table-stacked thead { display: none; }

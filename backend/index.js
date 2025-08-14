@@ -213,7 +213,7 @@ app.get('/howToHelpIcons', (req, res) => {
 
 //Route to the donate page
 app.get('/donate', (req, res) => {
-  res.redirect('https://turtleshelterproject.org/checkout/donate?donatePageId=5b6a44c588251b72932df5a0'); 
+  res.redirect('https://turtleshelterproject.org'); 
 
 });
 
