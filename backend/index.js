@@ -24,6 +24,12 @@ app.set("views", path.join(__dirname, "../frontend/views")) //This is telling th
 app.use(express.urlencoded({extended: true})); //allows us to get data out of the request.body
 app.use(express.json());
 
+// Expose current path to EJS views for active nav highlighting
+app.use((req, res, next) => {
+  res.locals.currentPath = req.path;
+  next();
+});
+
 // Session middleware setup
 app.use(session({
   secret: '123456789', // Replace with a secure secret key

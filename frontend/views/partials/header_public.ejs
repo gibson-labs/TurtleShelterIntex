@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top public-nav" id="mainNav" style="background-color: #759145;">
+	<div class="container-fluid p-0" style="background-color: #759145; margin-left: 10px; margin-right: 10px;">
+		<a class="navbar-brand" href="/" style="color: #f7f4de;">Turtle Shelter Project</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="color: #f7f4de;">
+			Menu
+			<i class="fas fa-bars ms-1"></i>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+				<li class="nav-item"><a class="nav-link <%= (currentPath === '/' ? 'active' : '') %>" href="/">Home</a></li>
+				<li class="nav-item"><a class="nav-link <%= (currentPath.startsWith('/howToHelp') ? 'active' : '') %>" href="/howToHelp">How to Help</a></li>
+				<li class="nav-item"><a class="nav-link <%= (currentPath.startsWith('/howToHelpIcons') || currentPath.startsWith('/donate') ? 'active' : '') %>" href="/howToHelpIcons">Donate</a></li>
+				<li class="nav-item"><a class="nav-link <%= (currentPath.startsWith('/eventRequest') ? 'active' : '') %>" href="/eventRequest">Request Event</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle <%= (currentPath.startsWith('/internalLanding') || currentPath.startsWith('/admin') || currentPath.startsWith('/login') || currentPath.startsWith('/volunteer') ? 'active' : '') %>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Admin View
+					</a>
+					<div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="/adminRedirect">Admin View</a>
+						<a class="dropdown-item" href="/volunteerPage">Volunteer View</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<style>
+  /* Public header active link styling only */
+  .public-nav .nav-link.active {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.18);
+    border-radius: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .public-nav .nav-link {
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .public-nav .nav-link:hover {
+    color: #f0ffe0 !important;
+  }
+</style>
