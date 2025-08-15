@@ -29,14 +29,20 @@ body {
   table.table td, table.table th { vertical-align: middle; }
 
   /* Section spacing */
-  .page-section { padding-top: 20px !important; padding-bottom: 20px !important; }
+  .page-section { padding-top: 10px !important; padding-bottom: 10px !important; }
 
   /* Public nav (yours) */
   .public-nav .navbar-nav { padding-top: 0.25rem !important; padding-bottom: 0.25rem !important; }
   .public-nav .nav-link { padding: 0.4rem 0.6rem !important; font-size: 0.95rem !important; }
 
   /* Containers shouldn’t cram edges */
-  .container, .container-fluid { padding-left: 12px; padding-right: 12px; max-width: 100% !important; }
+  .container, .container-fluid { 
+    padding-left: 8px !important; 
+    padding-right: 8px !important; 
+    max-width: 100% !important; 
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 
   /* ===== Masthead / hero ===== */
   header.masthead {
@@ -79,6 +85,16 @@ body {
 
   /* Buttons: large tap targets */
   .btn-xl { width: 100%; padding: 0.75rem 1rem !important; font-size: 1rem !important; }
+  
+  /* Override global container styles for mobile */
+  .container { 
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
 }
 
 /* Extra small phones */
