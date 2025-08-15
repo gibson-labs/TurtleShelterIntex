@@ -11714,6 +11714,51 @@ h1 {
 * { box-sizing: border-box; }
 img, iframe, video { max-width: 100%; height: auto; }
 
+/* Fix mobile image loading issues */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-color: #f8f9fa;
+}
+
+/* Ensure images don't disappear on mobile */
+.portfolio-item img,
+.carousel-item img,
+.about-founder img {
+  min-height: 200px;
+  background-color: #f8f9fa;
+  object-fit: cover;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Mobile-specific image fixes */
+@media (max-width: 768px) {
+  img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+    background-color: #f8f9fa;
+    min-height: 150px;
+  }
+  
+  .carousel-item img {
+    min-height: 250px;
+    object-fit: cover;
+    display: block !important;
+  }
+  
+  .portfolio-item img {
+    min-height: 200px;
+    object-fit: cover;
+    display: block !important;
+  }
+}
+
 header.masthead {
   background-position: center center !important;
   background-size: cover !important;
