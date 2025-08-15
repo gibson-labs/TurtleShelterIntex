@@ -9,7 +9,6 @@
 			<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 				<li class="nav-item"><a class="nav-link <%= (currentPath === '/' ? 'active' : '') %>" href="/">Home</a></li>
 				<li class="nav-item"><a class="nav-link <%= (currentPath.startsWith('/howToHelp') ? 'active' : '') %>" href="/howToHelp">How to Help</a></li>
-				<li class="nav-item"><a class="nav-link <%= (currentPath.startsWith('/howToHelpIcons') || currentPath.startsWith('/donate') ? 'active' : '') %>" href="/howToHelpIcons">Donate</a></li>
 				<li class="nav-item"><a class="nav-link <%= (currentPath.startsWith('/eventRequest') ? 'active' : '') %>" href="/eventRequest">Request Event</a></li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle <%= (currentPath.startsWith('/internalLanding') || currentPath.startsWith('/admin') || currentPath.startsWith('/login') || currentPath.startsWith('/volunteer') ? 'active' : '') %>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -26,7 +25,7 @@
 </nav>
 
 <!-- Demo Banner -->
-<div style="background: #6c757d; color: white; text-align: center; padding: 6px; font-size: 14px; font-weight: bold; width: 100%; position: fixed; top: 80px; left: 0; z-index: 9998;">
+<div style="background: #6c757d; color: white; text-align: center; padding: 6px; font-size: 14px; font-weight: bold; width: 100vw; position: fixed; top: 80px; left: 0; z-index: 9998; box-sizing: border-box;">
     💻 DEMO PROJECT - Support the real charity at <a href="https://turtleshelterproject.org" target="_blank" style="color: white; text-decoration: underline;">turtleshelterproject.org</a> 💻
 </div>
 
@@ -44,5 +43,9 @@
   }
   .public-nav .nav-link:hover {
     color: #f0ffe0 !important;
+  }
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
   }
 </style>
