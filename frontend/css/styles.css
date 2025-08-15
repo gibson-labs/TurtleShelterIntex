@@ -11863,8 +11863,13 @@ header.masthead {
   background: none !important;
   box-shadow: none !important;
   border-radius: 0 !important;
-  margin: 20px auto !important;
+  margin: 55px auto 20px auto !important;
   width: 80% !important;
+}
+
+/* Adjust scroll target position for demo disclaimer */
+#demo-disclaimer {
+  scroll-margin-top: 80px;
 }
 
 #demo-disclaimer .container {
