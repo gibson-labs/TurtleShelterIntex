@@ -23,23 +23,49 @@
                 margin: 20px 0;
                 border-radius: 5px;
             }
+            
+            /* Make masthead background images slightly smaller */
+            header.masthead {
+                background-size: 95% !important;
+            }
         </style>
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <%- include('partials/header_public') %>
         <!-- Masthead-->
-        <header class="masthead">
+        <header class="masthead" style="margin-top: 60px;">
             <div class="container" style="background-color: rgba(30, 30, 30, 0.5); box-shadow: none;">
                 <div class="masthead-subheading">People Freezing on the Street</div>
                 <div style="margin-bottom: 30px;" class="masthead-heading text-uppercase">Ends with You</div>
                 <div><a class="btn btn-primary btn-xl text-uppercase" style="color: #f7f4de;" href="/howToHelp">How can I Help?</a></div>
                 
             </div>
-        </header style="margin-bottom: 20px">
+            
+            <!-- Scroll Down Arrow -->
+            <div class="text-center mt-5 mb-2">
+                <a href="#demo-disclaimer" class="text-white" style="text-decoration: none; font-size: 2.5rem; animation: bounce 2s infinite;">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+            
+            <style>
+                @keyframes bounce {
+                    0%, 20%, 50%, 80%, 100% {
+                        transform: translateY(0);
+                    }
+                    40% {
+                        transform: translateY(-10px);
+                    }
+                    60% {
+                        transform: translateY(-5px);
+                    }
+                }
+            </style>
+        </header>
 
         <!-- Demo Disclaimer -->
-        <div class="container">
+        <div class="container" id="demo-disclaimer">
             <div class="demo-disclaimer">
                 <h5><i class="fas fa-info-circle text-info"></i> About This Demo Site</h5>
                 <p class="mb-0">
