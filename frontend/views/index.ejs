@@ -159,7 +159,9 @@
                 <h2 class="section-heading text-uppercase">We Need You</h2>
                 <h5 class="section-subheading text-muted">As a service based organization, we rely on the help of our amaizng volunteers.<br>Click the button below to see how you can help in our mission to save lives and alleviate pain.</h5>
             </div>
-            <div class="row">
+            
+            <!-- Desktop Grid Layout (hidden on mobile) -->
+            <div class="row d-none d-md-flex">
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <!-- We need you item 1-->
                     <div class="portfolio-item">
@@ -181,8 +183,47 @@
                         </a>
                     </div>
                 </div>
-                <div class="text-center mt-4">
-                    <a class="btn btn-primary btn-xl text-uppercase" style="color: #f7f4de; width: 100%;" href="/howToHelp">Serve Now!</a>
+            </div>
+            
+            <!-- Mobile Carousel (hidden on desktop) -->
+            <div class="d-md-none">
+                <div id="volunteerCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#volunteerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#volunteerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#volunteerCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="portfolio-item">
+                                <img class="img-fluid rounded mx-auto d-block" src="/assets/volunteer3.jpg" alt="Volunteer 1" style="max-height: 300px; object-fit: cover;" />
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="portfolio-item">
+                                <img class="img-fluid rounded mx-auto d-block" src="/assets/volunteer2.jpg" alt="Volunteer 2" style="max-height: 300px; object-fit: cover;" />
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="portfolio-item">
+                                <img class="img-fluid rounded mx-auto d-block" src="/assets/volunteer1.jpg" alt="Volunteer 3" style="max-height: 300px; object-fit: cover;" />
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#volunteerCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#volunteerCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="serve-now-wrapper">
+                <div class="serve-now-button-container">
+                    <a class="serve-now-button" href="/howToHelp">Serve Now!</a>
                 </div>
             </div>
         </div>
@@ -204,9 +245,11 @@
         </div>
       </div>
     </div>
-    <section style="padding-top: 60px; padding-bottom: 60px;" class="page-section" id="video">
-        <div style="text-align: center;">
-            <iframe width="80%" height="600px" src="https://www.youtube.com/embed/51UNMu5S7Xw?si=uFLxrnne4uA1ol_O" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; autoplay" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <section class="page-section" id="video">
+        <div class="container">
+            <div class="text-center">
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/51UNMu5S7Xw?si=uFLxrnne4uA1ol_O" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; autoplay" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
         </div>
     </section>
         <!-- About the founder-->
