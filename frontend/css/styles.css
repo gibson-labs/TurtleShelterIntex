@@ -11725,14 +11725,22 @@ img {
 
 /* Ensure images don't disappear on mobile */
 .portfolio-item img,
-.carousel-item img,
-.about-founder img {
+.carousel-item img {
   min-height: 200px;
   background-color: #f8f9fa;
   object-fit: cover;
   display: block !important;
   width: 100% !important;
   height: auto !important;
+}
+
+/* About the founder image - desktop size fix */
+@media (min-width: 769px) {
+  .about-founder img {
+    width: 250px !important;
+    height: 250px !important;
+    min-height: auto !important;
+  }
 }
 
 /* Mobile-specific image fixes */
@@ -11759,10 +11767,40 @@ img {
   }
 }
 
+
 header.masthead {
   background-position: center center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
+}
+
+/* Fix masthead background image on desktop */
+@media (min-width: 769px) {
+  .masthead {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    margin-top: 0 !important;
+    padding-top: 60px !important;
+    position: relative !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+  
+  .masthead .container {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  
+  .masthead .text-center.mt-5 {
+    position: absolute !important;
+    bottom: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+  }
 }
 
 @media (max-width: 768px) {
