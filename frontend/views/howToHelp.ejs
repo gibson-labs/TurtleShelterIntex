@@ -15,20 +15,67 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 </head>
-<body>
+<body class="page-howtohelp">
     <!-- Navigation-->
     <%- include('partials/header_public') %>
     <!-- Image Banner -->
-    <div style="margin-top: 60px;"></div>
-        <img src="/assets/donate.avif" alt="Banner Image" class="img-fluid w-100" style="height: 75vh; object-fit: cover;">
+    <div id="helpBanner">
+        <img src="/assets/donate.avif" alt="Banner Image" class="img-fluid w-100" style="height: 75vh; object-fit: cover; margin: 0;">
     </div>
     <!-- How to Help Section-->
     <section class="page-section bg-light" style="padding-top: 30px;" id="help">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">How You Can Make a Difference</h2>
+            <h2 class="section-heading text-uppercase">You Can Make a Difference</h2>
             <h6 class="section-subheading text-muted">Just like the slow but steady pace of the proverbial tortise, your small efforts to support us leaves a big impact.</h6><br>
         </div>
-        <div class="row">
+        <!-- Mobile cards (square image on top) -->
+        <div class="row d-md-none">
+            <!-- Volunteer -->
+            <div class="col-lg-4">
+                <a href="/volunteerForm" class="text-decoration-none">
+                    <div class="help-card">
+                        <div class="help-card-img">
+                            <img src="/assets/Screenshot 2024-12-03 105402.png" alt="Become a Volunteer" />
+                        </div>
+                        <div class="help-card-body text-center">
+                            <h4>Become a Volunteer</h4>
+                            <p class="text-muted">Have time on your hands? <b>Click here</b> to become a valuable part of our team by dedicating time each month to help with events and other projects.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Donate -->
+            <div class="col-lg-4">
+                <a href="/donate" target="_blank" class="text-decoration-none">
+                    <div class="help-card">
+                        <div class="help-card-img">
+                            <img src="/assets/TSVestRecipients.jpg" alt="Donate" />
+                        </div>
+                        <div class="help-card-body text-center">
+                            <h4>Donate</h4>
+                            <p class="text-muted">Each life-saving vest costs around $50. Whether you can give $1, $10, or $100, your funds will change a life for good.<br><b>Click here</b> to donate securely online.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Schedule an Event -->
+            <div class="col-lg-4">
+                <a href="/eventRequest" class="text-decoration-none">
+                    <div class="help-card">
+                        <div class="help-card-img">
+                            <img src="/assets/vests.png" alt="Schedule an Event" />
+                        </div>
+                        <div class="help-card-body text-center">
+                            <h4>Schedule an Event</h4>
+                            <p class="text-muted">Want your company, group, or organization to volunteer? <b>Click here</b> to request an event with us! We find jobs for adults and kids of all ages and skill levels.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Desktop cards (original layout) -->
+        <div class="row d-none d-md-flex">
             <!-- Volunteer -->
             <div class="col-lg-4">
                 <div class="team-member">
