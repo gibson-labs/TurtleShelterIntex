@@ -9,7 +9,9 @@ body {
 }
 
 /* ===== Mobile-only (phones & small tablets) ===== */
-@media (max-width: 768px) {
+@media (max-width: 768px) { 
+  /* Avoid header overlap on Event Request page */
+  body.page-event-request { padding-top: calc(115px + env(safe-area-inset-top)) !important; }
   /* Reduce top padding slightly on How to Help page to remove extra white gap */
   body.page-howtohelp {
     padding-top: calc(56px + env(safe-area-inset-top)) !important;
