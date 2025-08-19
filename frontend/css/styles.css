@@ -11815,8 +11815,8 @@ header.masthead {
   }
   #mainNav .navbar-collapse { max-width: 100%; overflow-x: hidden; }
 
-  /* Make the demo banner flow so it doesn't cover content */
-  .demo-banner { position: relative; top: 0; width: 100%; }
+  /* Keep banner fixed; spacing handled via header script */
+  .demo-banner { width: 100%; }
 
   /* Make the slideshow masthead truly fullscreen and non-draggable */
   header.masthead {
@@ -12232,9 +12232,10 @@ header.masthead {
 
 /* Desktop layout and spacing */
 @media (min-width: 769px) {
-  /* Fixed footer at bottom without gap, prevent overlap */
-  .footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; }
-  body { padding-bottom: 88px; }
+  /* Footer sits at bottom of page (not pinned), no white gap */
+  html, body { height: 100%; }
+  body { min-height: 100vh; display: flex; flex-direction: column; padding-bottom: 0; }
+  .footer { position: static; margin-top: auto; }
   .section {
     padding-top: 40px !important;
     padding-bottom: 40px !important;
