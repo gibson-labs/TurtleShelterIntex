@@ -11823,7 +11823,7 @@ header.masthead {
     margin-top: 0 !important;   /* avoids overlap on mobile */
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    min-height: 100dvh;         /* full screen height on phones */
+    min-height: calc(100dvh - var(--top-offset, 0px)); /* account for nav+banner */
     width: 100%;
     overflow: hidden;           /* prevents horizontal drag/pan */
     display: flex !important;
@@ -11904,6 +11904,13 @@ header.masthead {
     margin: 0 auto !important;
     float: none !important;
   }
+}
+
+/* Mobile layout: keep footer flush to bottom, avoid extra page whitespace */
+@media (max-width: 768px) {
+  html, body { height: 100%; }
+  body { min-height: 100dvh; display: flex; flex-direction: column; padding-bottom: 0 !important; }
+  .footer { position: static; margin-top: auto; }
 }
 
 /* Override any conflicting styles */

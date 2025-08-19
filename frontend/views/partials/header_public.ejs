@@ -78,10 +78,13 @@
       var banner = document.querySelector('.demo-banner');
       if (!nav || !banner) return;
       var navH = nav.offsetHeight || 0;
+      var isMobile = window.matchMedia('(max-width: 768px)').matches;
       banner.style.position = 'fixed';
-      banner.style.top = navH + 'px';
+      var mobileDelta = isMobile ? 1 : 0;
+      banner.style.top = (navH - mobileDelta) + 'px';
       var bannerH = banner.offsetHeight || 0;
-      document.body.style.paddingTop = (navH + bannerH) + 'px';
+      document.body.style.paddingTop = (navH + bannerH - mobileDelta) + 'px';
+      document.documentElement.style.setProperty('--top-offset', (navH + bannerH - mobileDelta) + 'px');
     }
     document.addEventListener('DOMContentLoaded', updateBannerOffsets);
     window.addEventListener('load', updateBannerOffsets);
