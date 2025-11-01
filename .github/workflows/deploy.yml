@@ -1,0 +1,24 @@
+name: deploy-turtleshelter
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, gibsonlabs]
+    concurrency:
+      group: turtleshelter-${{ github.ref }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pre-down (idempotent)
+        env: { COMPOSE_PROJECT_NAME: turtleshelter }
+        run: docker compose -p "$COMPOSE_PROJECT_NAME" down --remove-orphans || true
+
+      - name: Build & up
+        env: { COMPOSE_PROJECT_NAME: turtleshelter }
+        run: |
+          docker compose -p "$COMPOSE_PROJECT_NAME" up -d --build --force-recreate
+          docker compose -p "$COMPOSE_PROJECT_NAME" ps
