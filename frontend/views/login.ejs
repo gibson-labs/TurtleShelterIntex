@@ -18,26 +18,7 @@
 </head>
 <body>
 <!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: #759145;">
-    <div class="container-fluid p-0" style="background-color: #759145; margin-left: 10px; margin-right: 10px;">
-        <a class="navbar-brand" href="/" style="color: #f7f4de;">
-            Turtle Shelter Project
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="color: #f7f4de;">
-            Menu
-            <i class="fas fa-bars ms-1"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/howToHelp">How to Help</a></li>
-                <li class="nav-item"><a class="nav-link" href="/howToHelpIcons">Donate</a></li>
-                <li class="nav-item"><a class="nav-link" href="/eventRequest">Request Event</a></li>
-                <li class="nav-item"><a class="nav-link" href="/adminRedirect">Admin Login</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<%- include('partials/header_public') %>
 <main style="padding-top: 12%;">
     <div class="outer-container">
         <div class="login-container" style="background-color: rgba(255, 255, 255, 0.8); border-radius: 15px; width: 400px; margin: 0 auto; padding: 20px;">
@@ -103,5 +84,6 @@
     domain="www.chatbase.co"
     defer>
 </script>
+<script src="/backend/scripts.js"></script>
 </body>
 </html>

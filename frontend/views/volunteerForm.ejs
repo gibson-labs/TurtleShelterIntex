@@ -38,6 +38,23 @@
             </div>
         </div>
     </nav>
+    <script>
+        (function () {
+            function syncMobileTopPadding() {
+                var nav = document.getElementById('mainNav');
+                if (!nav) return;
+                var isMobile = window.matchMedia('(max-width: 768px)').matches;
+                if (isMobile) {
+                    document.body.style.paddingTop = (nav.offsetHeight || 0) + 'px';
+                } else {
+                    document.body.style.paddingTop = '';
+                }
+            }
+            document.addEventListener('DOMContentLoaded', syncMobileTopPadding);
+            window.addEventListener('load', syncMobileTopPadding);
+            window.addEventListener('resize', syncMobileTopPadding);
+        })();
+    </script>
         <section>
             <div class="container">
                 <h2>Volunteer Form</h2>
