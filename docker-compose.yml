@@ -1,18 +1,22 @@
 
+version: "3.8"
+
 
 services:
   app:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "5002:80"
+
     environment:
-      - NODE_ENV=production
-      - PORT=80
-      - RDS_HOSTNAME=${RDS_HOSTNAME}
-      - RDS_USERNAME=${RDS_USERNAME}
-      - RDS_PASSWORD=${RDS_PASSWORD}
-      - RDS_DB_NAME=${RDS_DB_NAME}
-      - RDS_PORT=${RDS_PORT:-5432}
+      NODE_ENV: production
+      PORT: 80
+    ports:
+      - "5002:80"   # keep same external port
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "http=require('http');http.get('http://127.0.0.1:'+process.env.PORT, r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
