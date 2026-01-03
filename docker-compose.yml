@@ -1,22 +1,31 @@
-
 version: "3.8"
 
+networks:
+  proxy:
+    external: true
 
 services:
   app:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: turtleshelter   # e.g. tdf-analyzer-web, or whatever
 
     environment:
       NODE_ENV: production
       PORT: 80
-    ports:
-      - "5002:80"   # keep same external port
+
+    # no host port; only exposed on the proxy network
+    expose:
+      - "80"
+
     restart: unless-stopped
+
     healthcheck:
       test: ["CMD", "node", "-e", "http=require('http');http.get('http://127.0.0.1:'+process.env.PORT, r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"]
       interval: 30s
       timeout: 5s
       retries: 5
 
+    networks:
+      - proxy
