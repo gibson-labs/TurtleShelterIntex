@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: [self-hosted, gibsonlabs]
+    runs-on: [self-hosted, hostinger]
     concurrency:
       group: turtleshelter-${{ github.ref }}
       cancel-in-progress: false
