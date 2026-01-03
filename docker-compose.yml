@@ -13,11 +13,11 @@ services:
 
     environment:
       NODE_ENV: production
-      PORT: 80
+      PORT: 5001
 
     # no host port; only exposed on the proxy network
     expose:
-      - "80"
+      - "5001"
 
     restart: unless-stopped
 
